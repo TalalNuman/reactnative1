@@ -1,45 +1,30 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Button,
-  TouchableHighlight,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  Alert,
-} from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+// import ViewImageScreen from "./App/screens/ViewImageScreen";
+// import WelcomeScreen from "./App/screens/WelcomeScreen";
 
+import AppButton from "./App/components/AppButton";
+import Card from "./App/components/Card";
 export default function App() {
-  var i = 0;
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>HEELO Jamal</Text>
-      <Button
-        color={"green"}
-        title="CLick Me"
-        onPress={() =>
-          Alert.alert("MyTitle", "My Message", [
-            { text: "yes" , onPress:()=>{console.log('YES')}},
-            { text: "No" , onPress:()=>{console.log('NO');}},
-          ])
-        }
-      >
-        Press Me Jamal
-      </Button>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <View
+      style={[
+        styles.container,
+        { backgroundColor: "#f8f4f4", paddingTop: 100, padding: 20 },
+      ]}
+    >
+      {/* <Text>HEELO</Text> */}
+      <Card title='Red Jacket for sale' price='$200' image={require('./App/assets/jacket.jpg')}/>
+      <Card title='Couch for sale' price='$450' image={require('./App/assets/couch.jpg')}/>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "dodgerblue",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
   },
 });
