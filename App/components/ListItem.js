@@ -7,7 +7,7 @@ export default function ListItem({ title, subTitle, image }) {
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={image} />
-      <View>
+      <View style={styles.titleContainer}>
         <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
@@ -18,12 +18,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems:"center",
+    padding:10,
   },
 
   img: {
     marginHorizontal: 10,
-    height: 70,
-    width: 70,
+    height: 60,
+    width: 60,
     borderRadius: 100,
   },
   title: {
