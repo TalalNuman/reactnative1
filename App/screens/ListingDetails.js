@@ -3,10 +3,11 @@ import React from "react";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
+import Screen from "../components/Screen";
 
 export default function ListingDetails({ title, price }) {
   return (
-    <View>
+    <Screen>
       <Image style={styles.img} source={require("../assets/jacket.jpg")} />
       <View style={styles.detailscontainer}>
         <AppText style={styles.title}>{title}</AppText>
@@ -19,7 +20,7 @@ export default function ListingDetails({ title, price }) {
           subTitle="5 Listings"
         />
       </View>
-    </View>
+    </Screen>
   );
 }
 const styles = StyleSheet.create({

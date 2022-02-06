@@ -28,38 +28,40 @@ export default function MessageScreen() {
   const [refreshing, setreFreshing] = useState(false);
   const [messages, setMessages] = useState(initialMessages);
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(message) => message.id.toString()}
-      renderItem={({ item }) => (
-        <ListItem
-          title={item.title}
-          subTitle={item.description}
-          image={item.image}
-          // onPress={() => {
-          //   console.log("Click on");
-          // }}
-          renderRightActions={() => (
-            <ListItemDeleteAction
-              onPress={() => {
-                handleDelte(item);
-              }}
-            />
-          )}
-        />
-      )}
-      ItemSeparatorComponent={ListItemSeperator}
-      refreshing={refreshing}
-      onRefresh={() => {
-        setMessages([
-          {
-            id: 3,
-            title: "t3",
-            description: "d3",
-            image: require("../assets/Talal.jpeg"),
-          },
-        ]);
-      }}
-    />
+    <Screen>
+      <FlatList
+        data={messages}
+        keyExtractor={(message) => message.id.toString()}
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.title}
+            subTitle={item.description}
+            image={item.image}
+            // onPress={() => {
+            //   console.log("Click on");
+            // }}
+            renderRightActions={() => (
+              <ListItemDeleteAction
+                onPress={() => {
+                  handleDelte(item);
+                }}
+              />
+            )}
+          />
+        )}
+        ItemSeparatorComponent={ListItemSeperator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 3,
+              title: "t3",
+              description: "d3",
+              image: require("../assets/Talal.jpeg"),
+            },
+          ]);
+        }}
+      />
+    </Screen>
   );
 }
