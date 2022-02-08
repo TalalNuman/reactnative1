@@ -3,7 +3,6 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import defaultStyles from "../config/styles";
-import Screen from "./Screen";
 export default function AppTextInput({ icon, ...otherProps }) {
   return (
     <View style={styles.container}>
@@ -15,11 +14,7 @@ export default function AppTextInput({ icon, ...otherProps }) {
           color={colors.medium}
         />
       )}
-      <TextInput
-        style={[defaultStyles.text, styles.input]}
-        keyboardType="ascii-capable"
-        {...otherProps}
-      />
+      <TextInput style={[defaultStyles.text, styles.input]} {...otherProps} />
     </View>
   );
 }
