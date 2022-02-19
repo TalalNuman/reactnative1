@@ -11,7 +11,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ListItem from "./ListItem";
 import colors from "../config/colors";
 import AppText from "./AppText";
-import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 export default function AppPicker({
   icon,
   items,
